@@ -21,7 +21,7 @@ The problem set is building around the three datasets typical for Big Data: sale
 
 ### Project Environment
 
-The Hadoop environment comes with a [virtual machine image](http://content.udacity-data.com/courses/ud617/Cloudera-Udacity-Training-V M-4.1.1.c.zip) from Cloudera, executed in [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+The Hadoop environment comes with a [virtual machine image](http://content.udacity-data.com/courses/ud617/Cloudera-Udacity-Training-VM-4.1.1.c.zip) from Cloudera, executed in [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 1) Unzip the virtual machine image;
 1) In VirtualBox, create a new Linux/RedHat64 machine;
 1) I've given it 8 Gb memory and 2 CPUs;
@@ -32,7 +32,7 @@ The Hadoop environment comes with a [virtual machine image](http://content.udaci
 ### Project Datasets
 
 * **Sales Data**: This data comes with the machine image in `~/udacity_training/data/purchases.txt` tab-separated. A 1000-line sample is available in this repository.
-* **Web Server Log**: This data comes with the machine image in `~/udacity_training/data/access_log` in [Common Log Format](http://en.wikipedia.org/wiki/Common_Log_Format) A 1000-line sample is available in this repository.
+* **Web Server Log**: This data comes with the machine image in `~/udacity_training/data/access_log` in [Common Log Format](http://en.wikipedia.org/wiki/Common_Log_Format). A 1000-line sample is available in this repository.
 * **Forum Data**: Two tab-separated files representing forum nodes and users. It comes [from here](http://content.udacity-data.com/course/hadoop/forum_data.tar.gz). Be careful taking the samples as the forum nodes body can contain newlines. Small testing samples are available in this repository.
 
 ## Running MapReduce Jobs
