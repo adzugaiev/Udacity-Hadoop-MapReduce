@@ -13,7 +13,6 @@ This project is my workbook of exercises completed through the Udacity course [I
     - [Put Data on HDFS](#put-data-on-hdfs)
     - [Run Hadoop](#run-hadoop)
     - [Get Result and Clear Output](#get-result-and-clear-output)
-[//]: # (* [What I Have Learned] #what-i-have-learned)
 * [Author](#author)
 
 ## Project Scope
@@ -47,6 +46,7 @@ Test files can be prepared from the datasets with `head` or `grep`, likewise the
 ### Put Data on HDFS
 
 `hadoop fs -mkdir input_folder`
+
 `hadoop fs -put data_file input_folder/`
 
 ### Run Hadoop
@@ -60,6 +60,7 @@ Alias `hsc` has the same syntax and runs `reducer.py` as a combiner on mapper no
 ### Get Result and Clear Output
 
 `hadoop fs -get output_folder/part-00000 local_file`
+
 `hadoop fs -rm -r output_folder`
 
 To save your past result from overwriting, the Hadoop job will not run if `output_folder` exists. Before running your next job either remove or specify another output folder.
