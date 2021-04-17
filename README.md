@@ -88,7 +88,7 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 - [x] Count hits to page.
 
-> `map_log_by_path.py reduce_sum.py' then `grep` for page.
+> `map_log_by_path.py reduce_sum.py` then `grep` for page.
 
 - [x] Count hits from IP.
 
@@ -97,7 +97,9 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 - [x] Find most popular path(s) by counts.
 
 > 1) `map_log_by_path.py reduce_sum.py`, save to `hit_count.tsv`
-> 1) `sort -t$'\t' -k2nr hit_count.tsv | head -5`
+> 1) `sort -t$'\t' -k2nr hit_count.tsv | head -5`  
+> or  
+> `cat hit_count.tsv | ./reduce_top.py`
 
 [//]: # (## What I Have Learned)
 
