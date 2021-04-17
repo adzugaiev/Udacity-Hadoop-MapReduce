@@ -13,6 +13,9 @@ This project is my workbook of exercises completed through the Udacity course [I
     - [Put Data on HDFS](#put-data-on-hdfs)
     - [Run Hadoop](#run-hadoop)
     - [Get Result and Clear Output](#get-result-and-clear-output)
+* [Problem Set](#problem-set)
+    - [Sales Data](#sales-data)
+    - [Log Data](#log-data)
 * [Author](#author)
 
 ## Project Scope
@@ -81,7 +84,20 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 > `map_sale_by_store.py reduce_totals.py`
 
+### Log Data
 
+- [x] Count hits to page.
+
+> `map_log_by_path.py reduce_sum.py' then `grep` for page.
+
+- [x] Count hits from IP.
+
+> `map_log_by_ip.py reduce_sum.py` then `grep` for IP.
+
+- [x] Find most popular path(s) by counts.
+
+> 1) `map_log_by_path.py reduce_sum.py`, save to `hit_count.tsv`
+> 1) `sort -t$'\t' -k2nr hit_count.tsv | head -5`
 
 [//]: # (## What I Have Learned)
 
