@@ -65,6 +65,24 @@ Alias `hsc` has the same syntax and runs `reducer.py` as a combiner on mapper no
 
 To save your past result from overwriting, the Hadoop job will not run if `output_folder` exists. Before running your next job either remove or specify another output folder.
 
+## Problem Set
+
+### Sales Data
+
+- [x] Give us a sales breakdown by product category across all of our stores.
+
+> `map_sale_by_item.py reduce_sum.py`
+
+- [x] Find the monetary value for the highest individual sale for each separate store.
+
+> `map_sale_by_store.py reduce_max.py`
+
+- [x] Find the total sales value across all the stores, and the total number of sales. Assume there is only one reducer.
+
+> `map_sale_by_store.py reduce_totals.py`
+
+
+
 [//]: # (## What I Have Learned)
 
 [//]: # (Through the implementation of this project I've learned:)
