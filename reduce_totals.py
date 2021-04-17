@@ -14,13 +14,13 @@ for line in sys.stdin:
     if len(data) != 2: # skip the corrupt line
         continue
     
-    thisKey, thisVal = data
+    key, val = data
     
-    if oldKey != None and oldKey != thisKey:
-        oldKey = thisKey
+    if oldKey != None and oldKey != key:
+        oldKey = key
     
-    oldKey = thisKey
-    sumVal += float(thisVal)
+    oldKey = key
+    sumVal += float(val)
     cntVal += 1
 
 if oldKey != None:
