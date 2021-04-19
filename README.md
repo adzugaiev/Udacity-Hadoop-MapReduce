@@ -16,6 +16,7 @@ This project is my workbook of exercises completed through the Udacity course [I
 * [Problem Set](#problem-set)
     - [Sales Data](#sales-data)
     - [Log Data](#log-data)
+    - [Forum Data](#forum-data)
 * [Author](#author)
 
 ## Project Scope
@@ -74,32 +75,38 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 - [x] Give us a sales breakdown by product category across all of our stores.
 
-> `map_sale_by_item.py reduce_sum.py`
+> `hs map_sale_by_item.py reduce_sum.py _`
 
 - [x] Find the monetary value for the highest individual sale for each separate store.
 
-> `map_sale_by_store.py reduce_max.py`
+> `hs map_sale_by_store.py reduce_max.py _`
 
 - [x] Find the total sales value across all the stores, and the total number of sales. Assume there is only one reducer.
 
-> `map_sale_by_store.py reduce_totals.py`
+> `hs map_sale_by_store.py reduce_totals.py_`
 
 ### Log Data
 
 - [x] Count hits to page.
 
-> `map_log_by_path.py reduce_sum.py` then `grep` for page.
+> `hs map_log_by_path.py reduce_sum.py _` then `grep` for page.
 
 - [x] Count hits from IP.
 
-> `map_log_by_ip.py reduce_sum.py` then `grep` for IP.
+> `hs map_log_by_ip.py reduce_sum.py _` then `grep` for IP.
 
 - [x] Find most popular path(s) by counts.
 
-> 1) `map_log_by_path.py reduce_sum.py`, save to `hit_count.tsv`
+> 1) `hs map_log_by_path.py reduce_sum.py _`, save to `hit_count.tsv`
 > 1) `sort -t$'\t' -k2nr hit_count.tsv | head -5`  
 > or  
 > `cat hit_count.tsv | ./reduce_top.py`
+
+### Forum Data
+
+- [x] Create an index of all words that appear in the body of a forum post and node id(s) they can be found in.
+
+> `hs map_forum_index.py reduce_index.py _`
 
 [//]: # (## What I Have Learned)
 
