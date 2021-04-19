@@ -83,7 +83,11 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 - [x] Find the total sales value across all the stores, and the total number of sales. Assume there is only one reducer.
 
-> `hs map_sale_by_store.py reduce_totals.py_`
+> `hs map_sale_by_store.py reduce_totals.py _`
+
+- [x] Find mean of sales for each weekday.
+
+> `hs map_sale_by_weekday.py reduce_mean.py _`
 
 ### Log Data
 
