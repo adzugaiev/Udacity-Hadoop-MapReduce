@@ -22,5 +22,5 @@ for line in sys.stdin:
     cost = data[4]
 
     if valid_item.match(item) and valid_cost.match(cost):
-        print item, '\t', cost
+        print '{0}\t{1}'.format(item, cost)
 

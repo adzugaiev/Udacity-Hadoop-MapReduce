@@ -13,16 +13,17 @@ for line in sys.stdin:
     if len(data) != 2: # no pair, skip line
         continue
 
-    key, val = data
+    key =   str(data[0])
+    val = float(data[1])
 
-    if oldKey and oldKey != key:
-        print oldKey, '\t', sumVal
+    if oldKey != None and oldKey != key:
+        print '{0}\t{1}'.format(oldKey, sumVal)
         oldKey = key
         sumVal = 0.0
 
-    oldKey = key
-    sumVal += float(val)
+    oldKey  = key
+    sumVal += val
 
 if oldKey != None:
-    print oldKey, '\t', sumVal
+    print '{0}\t{1}'.format(oldKey, sumVal)
 

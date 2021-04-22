@@ -14,7 +14,7 @@ for line in sys.stdin:
     if len(data) != 2: # skip the corrupt line
         continue
     
-    key = data[0]
+    key =   str(data[0])
     val = float(data[1])
     
     # find current line's position in top N, if any
@@ -35,5 +35,5 @@ for line in sys.stdin:
 
 # after processing all lines, write final top N
 for top_line in (top_lines if ascending else top_lines[::-1]):
-    print top_line[0], '\t', top_line[1]
+    print '{0}\t{1}'.format(top_line[0], top_line[1])
     

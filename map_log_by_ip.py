@@ -21,5 +21,5 @@ for line in sys.stdin:
     if len(ip) < 1: #line has no ip
         continue
 
-    print ip, '\t', 1
+    print '{0}\t{1}'.format(ip, 1)
 

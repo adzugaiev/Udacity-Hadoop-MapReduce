@@ -23,5 +23,5 @@ for line in sys.stdin:
     cost = data[4]
 
     if valid_date.match(date) and valid_cost.match(cost):
-        print dt.strptime(date, '%Y-%m-%d').weekday(), '\t', cost
+        print '{0}\t{1}'.format(dt.strptime(date, '%Y-%m-%d').weekday(), cost)
 

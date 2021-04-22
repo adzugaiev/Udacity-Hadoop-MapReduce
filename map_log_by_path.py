@@ -22,5 +22,5 @@ for line in sys.stdin:
     if len(request) < 2: #request has no page
         continue
     
-    print url.urlparse(request[1]).path, '\t', 1
+    print '{0}\t{1}'.format(url.urlparse(request[1]).path, 1)
 

@@ -5,7 +5,7 @@
 
 import sys
 
-maxVal = 0.0
+maxVal = 0.0 # this assumes values are positive
 oldKey = None
 
 for line in sys.stdin:
@@ -13,17 +13,18 @@ for line in sys.stdin:
     if len(data) != 2: # skip the corrupt line
         continue
 
-    key, val = data
+    key =   str(data[0])
+    val = float(data[1])
 
     if oldKey != None and oldKey != key:
-        print oldKey, '\t', maxVal
+        print '{0}\t{1}'.format(oldKey, maxVal)
         oldKey = key
         maxVal = 0.0
 
     oldKey = key
-    if float(val) > maxVal:
+    if val > maxVal:
         maxVal = val
 
 if oldKey != None:
-    print oldKey, '\t', maxVal
+    print '{0}\t{1}'.format(oldKey, maxVal)
 

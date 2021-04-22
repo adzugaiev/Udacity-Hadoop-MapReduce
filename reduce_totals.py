@@ -7,23 +7,17 @@ import sys
 
 sumVal = 0.0
 cntVal = 0
-oldKey = None
 
 for line in sys.stdin:
     data = line.strip().split('\t')
     if len(data) != 2: # skip the corrupt line
         continue
     
-    key, val = data
+    val = float(data[1])
     
-    if oldKey != None and oldKey != key:
-        oldKey = key
-    
-    oldKey = key
-    sumVal += float(val)
+    sumVal += val
     cntVal += 1
 
-if oldKey != None:
-    print 'Sum', '\t', 'Count'
-    print sumVal, '\t', cntVal
+print 'Sum\tCount'
+print '{0}\t{1}'.format(sumVal, cntVal)
 

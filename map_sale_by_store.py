@@ -14,13 +14,13 @@ valid_cost  = re.compile(r'^\d*\.?\d*$')
 
 for line in sys.stdin:
     
-    data = line.strip().split("\t")
+    data = line.strip().split('\t')
     if len(data) < 5: # skip line with no cost
         continue
     
     store = data[2]
-    cost = data[4]
+    cost  = data[4]
 
     if valid_store.match(store) and valid_cost.match(cost):
-        print store, '\t', cost
+        print '{0}\t{1}'.format(store, cost)
 

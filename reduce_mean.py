@@ -14,18 +14,19 @@ for line in sys.stdin:
     if len(data) != 2: # no pair, skip line
         continue
     
-    key, val = data
+    key =   str(data[0])
+    val = float(data[1])
     
-    if oldKey and oldKey != key:
-        print oldKey, '\t', sumVal / cntVal
+    if oldKey != None and oldKey != key:
+        print '{0}\t{1}'.format(oldKey, sumVal / cntVal)
         oldKey = key
         sumVal = 0.0
         cntVal = 1.0
     
-    oldKey = key
-    sumVal += float(val)
+    oldKey  = key
+    sumVal += val
     cntVal += 1.0
     
 if oldKey != None:
-    print oldKey, '\t', sumVal / cntVal
+    print '{0}\t{1}'.format(oldKey, sumVal / cntVal)
 
