@@ -17,6 +17,7 @@ This project is my workbook of exercises completed through the Udacity course [I
     - [Sales Data](#sales-data)
     - [Log Data](#log-data)
     - [Forum Data](#forum-data)
+    - [Using Combiner](#using-combiner)
 * [Author](#author)
 
 ## Project Scope
@@ -99,7 +100,7 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 > `hs map_log_by_ip.py reduce_sum.py _` then `grep` for IP.
 
-- [x] Find most popular path(s) by counts.
+- [x] Find the most popular path(s) by counts.
 
 > 1) `hs map_log_by_path.py reduce_sum.py _`, save to `hit_count.tsv`
 > 1) `sort -t$'\t' -k2nr hit_count.tsv | head -5`  
@@ -111,6 +112,28 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 - [x] Create an index of all words that appear in the body of a forum post and node id(s) they can be found in.
 
 > `hs map_forum_index.py reduce_index.py _`
+
+### Using Combiner
+
+Compare the counter statistics of the same MapReduce job running with and without combiner. Combiner is the same as the reducer.
+
+> `hs  map_sale_by_weekday.py reduce_max.py _`
+> `hsc map_sale_by_weekday.py reduce_max.py _`
+
+|Counter|Without Combiner|With Combiner|
+|:---|---:|---:|
+|Map input records|4,138,476|4,138,476|
+|Map output records|4,138,476|4,138,476|
+|Map output bytes|35,840,096|35,840,096|
+|Combine input records|0|4,138,584|
+|Combine output records|0|136|
+|Reduce shuffle bytes|44,117,072|332|
+|Reduce input records|4,138,476|28|
+|Reduce output records|7|7|
+|Spilled Records|12,219,835|164|
+|CPU time spent (ms)|90,750|81,810|
+
+As you can see, the combiner dramatically decreases records shuffling between the mapping and the reducing nodes. The visible performance increase is just 10% because Hadoop is running on a local machine, it will be higher on a real cluster where the records exchange between the nodes takes place over the network.
 
 [//]: # (## What I Have Learned)
 
