@@ -6,7 +6,7 @@
 import sys
 
 sumVal = 0.0
-cntVal = 1.0
+cntVal = 0.0
 oldKey = None
 
 for line in sys.stdin:
@@ -21,7 +21,7 @@ for line in sys.stdin:
         print '{0}\t{1}'.format(oldKey, sumVal / cntVal)
         oldKey = key
         sumVal = 0.0
-        cntVal = 1.0
+        cntVal = 0.0
     
     oldKey  = key
     sumVal += val
