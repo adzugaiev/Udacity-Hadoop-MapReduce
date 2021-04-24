@@ -113,6 +113,14 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 > `hs map_forum_index.py reduce_index.py _`
 
+- [x] Join the forum node and forum user data: `forum_nodes.tsv` and `forum_users.tsv`. The output from the reducer for each forum post should be:`forum_nodes.id` `forum_nodes.title` `forum_nodes.author_id` `forum_nodes.node_type` `forum_nodes.added_at` `forum_nodes.score` `forum_users.reputation` separated by `\t`.
+
+> The mapper, `map_forum_join.py` should take in records from both `forum_node` and `forum_users` and keep, for each record, those fields that are needed for the reducer output. The mapper will start each line with user id followed by the line type (1 = user, 2 = node) to mark where it comes from (user data or node data).
+> The mapper key for both types of lines is the user id: either `forum_users.user_ptr_id` or `forum_nodes.author_id`. During the sort and shuffle phases lines will be grouped based on the user id so the reducer can process and join them appropriately.
+> Reducer, `reduce_forum_join.py` joins the tsv lines that come from 2 sources:
+> 1) Line that starts with userid then 1 is the user data
+> 1) Line that starts with userid then 2 is the forum node data
+
 ### Using Combiner
 
 Compare the counter statistics of the same MapReduce job running with and without combiner. Combiner is the same as the reducer.
