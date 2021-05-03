@@ -127,6 +127,10 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 > `hs map_forum_user_hour.py reduce_frequent.py _`
 
+- [x] We are interested to see if there is a correlation between the length of a post and the length of answers. Write a mapreduce program that would process the `forum_node` data and output the length of the post and the average answer (just answer, not comment) length for each post.
+
+> `hs map_forum_answer.py reduce_forum_answer.py _`
+
 ### Using Combiner
 
 Compare the counter statistics of the same MapReduce job running with and without combiner. Combiner is the same as the reducer.
