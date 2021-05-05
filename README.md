@@ -127,13 +127,17 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 > `hs map_forum_user_hour.py reduce_frequent.py _`
 
-- [x] Process `forum_nodes.tsv` and output the length of the post and the average answer (just answer, not comment) length for each post.
+- [x] Find the length of the post and the average answer (just answer, not comment) length for each post.
 
 > `hs map_forum_answer.py reduce_forum_answer.py _`
 
 - [x] Find top 10 tags, ordered by the number of questions they appear in.
 
-> Use `map_forum_tags.py` to count each tag appearance as 1, then two existing reducers: `reduce_sum.py` as combiner to count tag's appearances and then `reduce_top.py`
+> Use `map_forum_tags.py`, then two existing reducers: `reduce_sum.py` as combiner to count tag's appearances and then `reduce_top.py`
+
+- [x] For each forum thread (that is a question node with all it's answers and comments) find a list of users that have posted there.
+
+> `hs map_forum_user_thread.py reduce_index.py _`
 
 ### Using Combiner
 
