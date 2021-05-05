@@ -133,7 +133,8 @@ To save your past result from overwriting, the Hadoop job will not run if `outpu
 
 - [x] Find top 10 tags, ordered by the number of questions they appear in.
 
-> Use `map_forum_tags.py`, then two existing reducers: `reduce_sum.py` as combiner to count tag's appearances and then `reduce_top.py`
+> `hsc map_forum_tags.py reduce_sum.py input sums`  
+> `hadoop fs -cat sums/part-00000 | ./reduce_top.py`
 
 - [x] For each forum thread (that is a question node with all it's answers and comments) find a list of users that have posted there.
 
